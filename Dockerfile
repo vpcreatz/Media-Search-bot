@@ -1,21 +1,21 @@
-FROM python:3-slim-buster
+FROM python:latest
 
-RUN pip install --upgrade pip
+# Installing Packages
+RUN apt update && apt upgrade -y
+RUN apt install git curl python3-pip ffmpeg -y
 
-ENV USER botx
-ENV HOME /home/$USER
-ENV BOT $HOME/media-search-bot
+# Updating Pip Packages
+RUN pip3 install -U pip
 
-RUN useradd -m $USER
-RUN mkdir -p $BOT
-RUN chown $USER:$USER $BOT
-USER $USER
-WORKDIR $BOT
+# Copying Requirements
+COPY requirements.txt /requirements.txt
 
+# Installing Requirements
+RUN cd /
+RUN pip3 install -U -r requirements.txt
+RUN mkdir /LazyDeveloper
+WORKDIR /LazyDeveloper
+COPY start.sh /start.sh
 
-COPY requirements.txt requirements.txt
-RUN pip install --user --no-cache-dir -r requirements.txt
-
-COPY . .
-
-CMD python3 bot.py
+# Running MessageSearchBot
+CMD ["/bin/bash", "/start.sh"]
