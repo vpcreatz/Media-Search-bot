@@ -5,7 +5,6 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from info import START_MSG, CHANNELS, ADMINS, INVITE_MSG
-from utils import Media
 
 logger = logging.getLogger(__name__)
 
