@@ -4,8 +4,7 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 
-from info import USERBOT_STRING_SESSION, API_ID, API_HASH, ADMINS, id_pattern
-from utils import save_file
+from info import API_ID, API_HASH, ADMINS
 
 logger = logging.getLogger(__name__)
 lock = asyncio.Lock()
