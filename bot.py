@@ -2,14 +2,8 @@ import logging, os, math
 import logging.config
 from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
+from utils import Media
 from info import SESSION, API_ID, API_HASH, BOT_TOKEN
-from typing import Union, Optional, AsyncGenerator
-from pyrogram import types
-from datetime import datetime
-from pytz import timezone
-from pyrogram.errors import BadRequest, Unauthorized
-from plugins import web_server
-from aiohttp import web
 
 # Get logging configurations
 logging.config.fileConfig("logging.conf")
