@@ -58,7 +58,7 @@ async def total(bot, message):
     """Show total files in database"""
     msg = await message.reply("Processing...⏳", quote=True)
     try:
-        total = await Media.count_documents()
+        total = await media.count_documents()
         await msg.edit(f'📁 Saved files: {total}')
     except Exception as e:
         logger.exception('Failed to check total files')
@@ -92,7 +92,7 @@ async def delete(bot, message):
         await msg.edit('This is not supported file format')
         return
 
-    result = await Media.collection.delete_one({
+    result = await media.collection.delete_one({
         'file_name': media.file_name,
         'file_size': media.file_size,
         'file_type': media.file_type,
