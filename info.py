@@ -8,7 +8,7 @@ SESSION = environ.get('SESSION', 'Media_search')
 USER_SESSION = environ.get('USER_SESSION', 'User_Bot')
 API_ID = int(environ.get('API_ID', '20960397'))
 API_HASH = environ.get('API_HASH', 'd68d847d3abb2087bf74f5d0683c2993')
-BOT_TOKEN = environ.get('BOT_TOKEN', '5830715055:AAFSgnqRgVcP-gHXUlJMn9EtwmNZrqNvKrk')
+BOT_TOKEN = environ.get('BOT_TOKEN', '5880821820:AAEhuXzRYLxP7yDsv7Lnu6bzYDmpxxuTLYQ')
 USERBOT_STRING_SESSION = environ.get('USERBOT_STRING_SESSION')
 
 # Bot settings
